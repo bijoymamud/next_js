@@ -1,0 +1,1 @@
+export const logo = "https://brandlogos.net/wp-content/uploads/2025/02/racing_bulls-logo_brandlogos.net_bjuef-300x249.png"
