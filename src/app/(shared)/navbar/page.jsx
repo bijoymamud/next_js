@@ -56,6 +56,14 @@ export default function Navbar() {
                   Shop
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/about_us"
+                  className="hover:text-emerald-500 transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
               <li className="cursor-pointer hover:text-emerald-500 transition-colors">
                 <Search size={18} strokeWidth={2.5} />
               </li>

@@ -50,7 +50,9 @@ export default async function Page({ params }) {
   if (!particularBlog) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center space-y-4">
-        <h1 className="text-2xl font-bold text-gray-800">Blog not found</h1>
+        <h1 className="text-2xl font-bold text-gray-800">
+          Blog details not found
+        </h1>
         <Link
           href="/blogs"
           className="text-emerald-500 hover:underline flex items-center gap-2"

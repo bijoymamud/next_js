@@ -42,31 +42,42 @@ export default function Blogs() {
     },
   ];
 
-  return (
-    <div className="min-h-screen px-20 py-10">
-      <h1 className="text-4xl font-bold mb-8">Latest Blogs</h1>
+  if (blogs) {
+    return (
+      <div className="min-h-screen px-20 py-10">
+        <h1 className="text-4xl font-bold mb-8">Latest Blogs</h1>
 
-      <div className="grid grid-cols-3 gap-10 place-items-center place-content-center flex-wrap">
-        {blogs.map((blog) => (
-          <div key={blog.id} className="mb-12 border  shadow-md">
-            <div className="relative aspect-video w-full overflow-hidden">
-              <Link href={`/blogs/${blog.id}`} className="block w-full h-full">
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </Link>
+        <div className="grid grid-cols-3 gap-10 place-items-center place-content-center flex-wrap">
+          {blogs.map((blog) => (
+            <div key={blog.id} className="mb-12 border  shadow-md">
+              <div className="relative aspect-video w-full overflow-hidden">
+                <Link
+                  href={`/blogs/${blog.id}`}
+                  className="block w-full h-full"
+                >
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </Link>
+              </div>
+              <div className="p-5">
+                <h2 className="text-2xl font-semibold mb-2">{blog.title}</h2>
+                <p className="text-gray-300 mb-4">{blog.description}</p>
+              </div>
             </div>
-            <div className="p-5">
-              <h2 className="text-2xl font-semibold mb-2">{blog.title}</h2>
-              <p className="text-gray-300 mb-4">{blog.description}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center space-y-4">
+        <h1 className="text-2xl font-bold text-gray-800">No blogs available</h1>
+      </div>
+    );
+  }
 }
